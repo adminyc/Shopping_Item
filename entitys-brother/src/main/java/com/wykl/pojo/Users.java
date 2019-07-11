@@ -1,7 +1,15 @@
 package com.wykl.pojo;
 
-import java.util.Date;
+import lombok.*;
+import lombok.experimental.Accessors;
 
+import java.util.Date;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Accessors(chain = true)
 public class Users {
     //用户id
     private int userid;
