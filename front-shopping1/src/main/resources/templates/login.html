@@ -1,0 +1,583 @@
+﻿<!DOCTYPE	html PUBLIC	"-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"	/>
+    <title>贵美商城</title>
+    <style type="text/css">
+        body{
+            border:0px;
+            padding:0px;
+            margin:0px auto;
+            font:12px Tahoma;
+        }
+        div,ul,li,dt,dl {
+            float:left;
+            margin:0px auto;
+            padding:0px;
+        }
+        li{
+            list-style:none;
+        }
+        a:link   {color:#333333;text-decoration: none;}
+        a:visited   {color:#333333;text-decoration: none;}
+        a:active   {color:#333333;text-decoration: none;}
+        a:hover   {color:#ff7300;}
+
+        input {
+            border:1px #333333 solid;
+            margin:0px;
+            padding:0px;
+        }
+
+        a img{
+            border:0px;
+        }
+
+        .red {color:red;font-weight: bold;text-align:left;}
+        .b {font-weight:bold;}
+        #container{
+            width:980px;
+            margin:0 auto;
+            float:none;
+        }
+
+        /*头部 从logo到服务热线*/
+        #header {
+            width:980px;
+            height:136px;
+            margin:0px auto;
+            background:url(./images/h_bg.jpg) no-repeat -22px 0px;
+        }
+
+        #logo {
+            width:250px;
+            height:108px;
+            float:left;
+            background:url(./images/h_bg.jpg) no-repeat -22px 0px;
+        }
+
+        /*右上方菜单 购物车 帮助中心 加入收藏 设为首页等，.pic1至.pic6分别为菜单前的小图标，h_text为头部文本*/
+        .upright_menu {
+            float:right;padding:15px 20px 0px 0px;
+        }
+        .pic{width:28px;height:26px;}
+        .pic1{background:url(./images/icon.gif) no-repeat;}
+        .pic2{background:url(./images/icon.gif) no-repeat -28px 0px;}
+        .pic3{background:url(./images/icon.gif) no-repeat -56px 0px;}
+        .pic5{background:url(./images/icon.gif) no-repeat -84px 0px;}
+        .pic6{background:url(./images/icon.gif) no-repeat -112px 0px;}
+        .h_text{padding:6px 5px 0px 5px; padding-top:8px\0;text-align:center;}
+        .login {background:url(./images/icon.gif) no-repeat 0px -25px;}
+        .reg {background:url(./images/icon.gif) no-repeat 0px -25px;}
+
+        .upright_bottom{width:600px;height:26px;float:right;padding:7px 0px 0px 0px;}
+        .bt {width:38px;height:26px;}
+        .hello {padding:11px 33px 0px 0px;color:#636362;letter-spacing:3px;}
+        .nav{width:980px;}
+        .nav li {
+            width:84px;
+            height:30px;
+            float:left;
+            text-align:center;
+            font-weight:bold;
+        }
+        .nav li a{padding:8px 10px;}
+        .nav li a:link,.nav li a:active,.nav li a:visited{
+            padding:8px 10px;
+            color:#333333;
+            font-size:13px;
+        }
+        .nav li a:hover{
+            padding:8px 10px;
+            background:url(./images/nav_bg.png) no-repeat !important;
+            filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled="true",sizingMethod="scale",src="./images/nav_bg.png");
+            _background-image:none;
+        }
+
+        /*主体*/
+        #main{
+            width:980px;
+            margin:0 auto;
+            border:0px;
+            float:left;
+        }
+
+        /*主体左部 整个商品分类部分*/
+        #left{
+            width:204px;
+            height:644px;
+            padding:38px 0px 0px 0px;
+            background:url(./images/bg.gif) no-repeat;
+        }
+
+        .left_list,.right_list{padding:0px 10px 0px 13px;width:174px;}
+        .left_class{
+            font-size:14px;
+            color:#ff7300;
+            font-weight:bold;
+            float:none;
+            padding:9px 0px 0px 0px;
+        }
+        .left_li{color:#636362;width:58px;line-height:24px;}
+
+
+
+        .width_8px{width:8px;height:644px;}
+
+        /*主体中部 从大幅轮播图（蓝色印象）到疯狂采购（IBM上网本）*/
+        #content{
+            width:527px;
+            background:url(./images/bg.gif) no-repeat -212px 0px;
+        }
+        .content_top{width:527px;padding-top:8px;height:182px;}
+
+        #adv1,#adv2,#adv3,#adv4{display:none; }
+        #adv {position:absolute;left:480px;top:315px;text-align:center;}
+        #adv a{/*设置无下划线、文字背景超连接样式*/
+            font-size:13px;
+            text-decoration:none;
+            background-color:#cccccc;
+            padding:0px 5px;
+        }
+
+        .content_list{width:524px;height:449px;padding-top:58px;*padding-top:50px;}
+        .content_li{width:166px;padding:3px 0px;text-align:center;}
+        .content_img {width:142px;height:89px;float:none;text-align:center;}
+
+        /*主体右部 从公告栏到手机充值*/
+        #right{
+            width:233px;
+            /*_margin-right:-3px; 浮动层里有文字则需要此行*/
+            height:644px;
+            background:url(./images/bg.gif) no-repeat -747px 0px;
+        }
+
+        .right_list dl{padding:10px 10px 0px 0px;*width:190px;}
+        .right_list dt{padding:0px 5px 0px 0px;}
+        .right_list dd{line-height:17px;white-space:nowrap;}
+        .right_list img{border:1px solid #9ea0a2;}
+
+        .r1{width:200px;height:170px;}
+        .r2 dl dt img{width:60px;height:47px;}
+        .r2 dd {padding-top:20px;}
+
+        #tab{padding-top:14px;}
+        #tabtitle1{cursor:pointer;width:80px;height:50px;background:url(images/bg.gif) no-repeat -761px -430px;}
+        #tabtitle2{cursor:pointer;width:153px;height:50px;background:url(images/bg.gif) no-repeat -840px -430px;}
+        #tab1,#tab2{display:none;}
+
+        /*底部 从友情链接到最后*/
+        #footer{
+            width:980px;
+            height:150px;
+            float:none;
+        }
+        .copyright{width:980px;text-align:center;line-height:20px;}
+        .register_textBroader{width:125px;}
+
+        /*对联广告 两边主图片层和关闭图片层*/
+
+        #advLeft{
+            position:absolute;
+            height:74px;
+            width:74px;
+            z-index:1;
+        }
+        #advRight{
+            position:absolute;
+            height:80px;
+            width:80px;
+            z-index:1;
+        }
+
+        #closeLeft{
+            cursor:pointer;
+            position:absolute;
+            height:13px;
+            width:13px;
+            z-index:2;
+        }
+
+        #closeRight{
+            cursor:pointer;
+            position:absolute;
+            height:13px;
+            width:13px;
+            z-index:2;
+        }
+
+        /*列表页*/
+        .list_bg {background:url(./images/list_bg.gif) repeat-x;}
+        .reg_text{width:130px;height:18px;margin:5px 5px; }
+
+        /*注册页*/
+        .input_title{width:160px;text-align:right;}
+        .input_content{width:507px;text-align:left;padding:5px 5px;}
+        .reg_bg {background:url(./images/reg_bg.gif) repeat-x;}
+        .login_bg {padding-top:50px;background:url(./images/login_bg.gif) repeat-x;}
+        textarea{border:1px solid #cccccc;padding:5px;}
+
+
+        /*长宽及对齐、浮动*/
+        .a_l{text-align:left;}
+        .a_r{text-align:right;}
+        .a_c{text-align:center;}
+
+        .f_l{float:left;}
+        .f_r{float:right;}
+        .f_n{float:none;}
+
+        /*input大小*/
+        .n4{width:35px;}
+
+        .w3p{width:3%;}
+        .w10p{width:10%;}
+        .w15p{width:15%;}
+        .w20p{width:20%;}
+        .w25p{width:25%;}
+        .w50p{width:50%;}
+        .w63p{width:63%;}
+        .w87p{width:87%;}
+
+        .w9{width:9px;}
+        .w84{width:84px;}
+        .w81 {width:81px;}
+        .w100{width:100px;}
+        .w129 {width:129px;}
+        .w252 {width:252px;}
+        .w350{width:350px;}
+        .w364{width:364px;}
+        .w507{width:507px;}
+
+        .h24 {height:24px;}
+        .h32 {height:32px;}
+        .h34 {height:34px;}
+        .h35 {height:35px;}
+        .h40 {height:40px;}
+        .h58 {height:58px;}
+        .h65 {height:65px;}
+        .h460 {height:460px;}
+
+        .h20p {height:20%;}
+        .h37p {height:37%;}
+        .h43p {height:43%;}
+
+        input checkbox{border:0;}
+
+        .warn{color:red;}
+        .pass{
+            color:blue;
+        }
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            function ck($e){
+                var id = $e.attr("id");
+                if("fname" == id){
+                    var name=$("#fname").val();
+                    //判断是否为空" "这个不能加空格。
+                    if(name==""){
+                        $("#DivFname").html("名字不能为空！");
+                        return false;
+                    }
+                    //判断是否包含数字
+                    for(var i=0;i<name.length;i++){
+                        if(!isNaN(name.charAt(i))){
+                            $("#DivFname").html("名字不能包含数字！")
+                            $("#DivFname").select(); //select 输入的不对后，鼠标会立刻定位到这里
+                            return false;//return语句要放在if里面,否则下面的语句就会终止
+                        }
+                    }
+                    //验证通过
+                    $("#DivFname").html("<span style='color:blue'>验证通过!</span>");
+                    return true;
+                }else if("lname" == id){
+                    var laname=$("#lname").val();
+                    if(laname==""){
+                        $("#DivName").html("姓氏不能为空");
+                        return false;
+                    }
+                    for(var i=0;i<laname.length;i++){
+                        if(!isNaN(laname.charAt(i))){
+                            $("#DivName").html("姓氏不能包含数字");
+                            return false;
+                        }
+                    }
+                    $("#DivName").html("<span style='color:blue'>验证通过!</span>") ;
+                    return true;
+                }else if("pwd" == id){
+                    var pwd=$("#pwd").val();
+                    if(pwd.length==0){
+                        $("#DivPwd").html("密码不能空");
+                        return false;
+                    }
+                    if(pwd.length<6){
+                        $("#DivPwd").html("密码长度不能小于六位");
+                        return false;
+                    }
+                    $("#DivPwd").html("<span style='color:blue'>验证通过!</span>");
+                    return true;
+                }else if("repwd" == id){
+                    var repwd=$("#repwd").val();
+                    pwd=$("#pwd").val();
+                    if(repwd.length==0){
+                        $("#DivRepwd").html("密码不能为空！");
+                        return false;
+                    }else if(repwd!=pwd){
+                        $("#DivRepwd").html("两次输入的密码不一致，请重新输入！");
+                        return false;
+                    }else if(repwd=pwd&&repwd!=0&&repwd.length>=6){
+                        $("#DivRepwd").html("<span style='color:blue'>验证通过!</span>");
+                        return true;
+                    }else{
+                        return false;
+                    }
+
+                }else {
+                    var email=$("#email").val();
+                    if(email==""){
+                        $("#DivEmail").html("电子邮箱不能为空");
+                        return false;
+                    }else if(email.indexOf("@")==-1){
+                        $("#DivEmail").html("电子邮箱格式不对，必须包含'@'");
+                        return false;
+                    }else if(email.indexOf(".")==-1){
+                        $("#DivEmail").html("电子邮箱格式不对，必须包含'.'");
+                        return false;
+                    }
+                    $("#DivEmail").html("<span style='color:blue'>验证通过</span>");
+                    return true;
+                }
+
+            };
+
+
+
+            //判断姓名
+            $("#fname").focus(function(){
+                $("#DivFname").html("名字规则：不为空，且不能有数字！")
+            });
+            $("#fname").blur(function(){
+                ck($(this));
+
+            });
+            //判断姓氏
+            $("#lname").focus(function(){
+                $("#DivName").html("姓氏不能为空且不能有数字");
+            }).blur(function(){
+                ck($(this));
+            });
+
+            //判断密码
+            $("#pwd").focus(function(){
+                $("#DivPwd").html("密码长度不能小于六位,两次输入输入的密码必须相同！");
+            }).blur(function(){
+                ck($(this));
+            });
+            //判断再次输入密码
+            $("#repwd").focus(function(){
+                $("#DivRepwd").html("密码长度不能小于六位,两次输入输入的密码必须相同！");
+            }).blur(function(){
+                ck($(this));
+            });
+            //判断电子邮箱
+            $("#email").focus(function(){
+                $("#DivEmail").html("电子邮箱不能为空，并且必须包含'@','.'");
+            }).blur(function(){
+                ck($(this));
+            });
+
+
+
+            $("#myform").submit(function(){
+                var fnameFlag = ck($("#fname"));
+                var pwdFlag = ck($("#pwd"));
+                var lnameFlag = ck($("#lname"));
+                var emailFlag = ck($("#email"));
+                var repwdFlag = ck($("#repwd"));
+
+                <!--console.log(fnameFlag);
+                console.log(pwdFlag);
+                console.log(lnameFlag);
+                console.log(emailFlag);
+                console.log(repwdFlag); -->
+                return (fnameFlag&&pwdFlag&&repwdFlag&&lnameFlag&&emailFlag);
+                //return false;
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+<div id="container">
+    <div id="header">
+        <div id="logo"></div>
+        <div class="upright_menu">
+            <ul>
+                <li class="pic pic1"></li>
+                <li class="h_text"><a href="buy_commodity.htm" target="_parent">购物车</a></li>
+                <li class="pic pic2"></li>
+                <li class="h_text"><a href="help.htm" target="_parent">帮助中心</a></li>
+                <li class="pic pic5"></li>
+                <li class="h_text"><a href="JavaScript:void(0);" οnclick="addFav();">加入收藏</a></li>
+                <li class="pic pic6"></li>
+                <li class="h_text"><a href="JavaScript:void(0);" οnclick="setHome(this);">设为首页</a></li>
+                <li class="bt login h_text"><a href="login.htm" target="_parent">登录</a></li>
+                <li class="bt reg h_text"><a href="register.htm" target="_parent">注册</a></li>
+            </ul>
+        </div> <!--upright_menu	end-->
+        <div class="upright_bottom">
+            <ul>
+                <li class="h_text	hello">你好，欢迎访问贵美商城！
+                    <script type="text/JavaScript">
+                        now=new Date;
+                        document.write(now.getYear()+"年"+(now.getMonth()+1)+"月"+now.getDate()+"日"+now.getHours()+"点"+now.getMinutes()+"分");
+                    </script>
+                </li>
+            </ul>
+        </div> <!--upright_bottom	end-->
+        <div class="nav">
+            <ul>
+                <li><a href="index.htm" target="_parent"> 首   页 </a></li>
+                <li><a href="commoditys_show.htm" target="_parent">家用电器</a></li>
+                <li><a href="commoditys_show.htm" target="_parent">手机数码</a></li>
+                <li><a href="commoditys_show.htm" target="_parent">日用百货</a></li>
+                <li><a href="commoditys_show.htm" target="_parent"> 书   籍 </a></li>
+                <li><a href="help.htm" target="_parent">帮助中心</a></li>
+                <li><a href="help.htm" target="_parent">免费开店</a></li>
+                <li><a href="help.htm" target="_parent">全球咨询</a></li>
+            </ul>
+        </div>	<!--nav	end-->
+    </div> <!--header	end-->
+
+    <form id="myform" name="myform" method="post"  action="welcome.html">
+        <table id="main" class="reg_bg" cellpadding="0px">
+            <tbody>
+            <tr class="h58">
+                <td colspan="3"> </td>
+                <td rowspan="11">
+                    <h4><img src="images/read.gif" alt="alt" />阅读贵美网服务协议 </h4>
+                    <textarea id="textarea" cols="30" rows="15">欢迎阅读服务条款协议，本协议阐述之条款和条件适用于您使用Gmgw.com网站的各种工具和服务。
+  本服务协议双方为贵美与贵美网用户，本服务协议具有合同效力。
+  贵美的权利和义务
+    1.贵美有义务在现有技术上维护整个网上交易平台的正常运行，并努力提升和改进技术，使用户网上交易活动的顺利。
+    2.对用户在注册使用贵美网上交易平台中所遇到的与交易或注册有关的问题及反映的情况，贵美应及时作出回复。
+    3.对于在贵美网网上交易平台上的不当行为或其它任何贵美认为应当终止服务的情况，贵美有权随时作出删除相关信息、终止服务提供等处理，而无须征得用户的同意。
+    4.因网上交易平台的特殊性，贵美没有义务对所有用户的注册资料、所有的交易行为以及与交易有关的其他事项进行事先审查。
+  </textarea>
+                </td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >名字：</td>
+                <td class="input_content"> <input id="fname" type="text"  class="reg_text"  size="24" /><span class='warn' id='DivFname'></span></td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >姓氏：</td>
+                <td class="input_content">
+                    <input id="lname" type="text" class="reg_text" size="24" /><span class='warn' id='DivName'></span></td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title"  >登录名：</td>
+                <td class="input_content">
+                    <input name="sname" type="text"  class="reg_text"   size="24" />
+                </td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >密码：</td>
+                <td class="input_content">
+                    <input id="pwd" type="password"  class="reg_text"  size="26" /> <span class='warn' id='DivPwd'></span></td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >再次输入密码：</td>
+                <td class="input_content">
+                    <input id="repwd"  type="password" class="reg_text" size="26" /><span class='warn' id='DivRepwd'></span>
+                </td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >电子邮箱：</td>
+                <td class="input_content">
+                    <input id="email"  type="text" class="reg_text" size="24" /> <span class='warn' id='DivEmail'></span></td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >性别：</td>
+                <td class="input_content">
+                    <input id="gen" style="border:0px;" type="radio"   name="sex" value="男" checked="checked" />
+                    <img src="images/Male.gif" width="23" height="21" alt="alt" />男
+                    <input   style="border:0px;" type="radio"  name="sex"   value="女" class="input" />
+                    <img src="images/Female.gif" width="23" height="21" alt="alt" />女
+                </td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >头像：</td>
+                <td class="input_content">
+                    <input type="file" />
+                </td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title" >爱好：</td>
+                <td class="input_content">
+                    <label>
+                        <input type="checkbox" id="checkbox" value="checkbox" />
+                    </label>
+                    运动
+                    <label>
+                        <input type="checkbox" id="checkbox2" value="checkbox" />
+                    </label>
+                    聊天
+                    <label>
+                        <input type="checkbox" id="checkbox3" value="checkbox" />
+                    </label>
+                    玩游戏
+                </td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title">出生日期：</td>
+                <td class="input_content">
+                    <input id="nYear" class="reg_text n4"  value="yyyy" maxlength="4" /> 年
+                    <select id="nMonth">
+                        <option value="" selected="selected">[选择月份]</option>
+                        <option value="0">一月</option>
+                        <option value="1">二月</option>
+                        <option value="2">三月</option>
+                        <option value="3">四月</option>
+                        <option value="4">五月</option>
+                        <option value="5">六月</option>
+                        <option value="6">七月</option>
+                        <option value="7">八月</option>
+                        <option value="8">九月</option>
+                        <option value="9">十月</option>
+                        <option value="10">十一月</option>
+                        <option value="11">十二月</option>
+                    </select> 月
+                    <input id="nDay"  class="reg_text n4"  value="dd" size="2" maxlength="2" />日
+                </td>
+            </tr>
+            <tr class="register_table_line">
+                <td class="input_title h35" >
+                </td>
+                <td class="input_content h35">
+                    <input type="image" id="Button" style="border:0px;" src="images/submit.gif" οnclick="javascript:$('#myfrom').submit()"/> <img src="images/reset.gif"   style="cursor:pointer;" alt="重置" />
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="h65"> </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <div id="footer">
+        <div class="copyright">友情链接：  <a href="#">百度</a> | <a href="#">Google</a> | <a href="#">雅虎</a> | <a href="#">淘宝</a> | <a href="#">拍拍</a> | <a href="#">易趣</a> | <a href="#">当当</a> | <a href="#">京东商城</a> | <a href="#">迅雷</a> | <a href="#">新浪</a> | <a href="#">网易</a> | <a href="#">搜狐</a> | <a href="#">猫扑</a> | <a href="#">开心网</a> | <a href="#">新华网</a> | <a href="#">凤凰网</a><br />
+            <hr size="1" />COPYRIGHT &copy;  2003-2010 <a href="index.htm" target="_parent">北京市贵美商城有限公司</a> ALL RIGHT RESERVED<br />
+            热线：400-66-13060 Email:service@prd.com<br />
+            ICP：<a href="#">沪ICP备05021104号</a><br />
+            <img src="images/img1.gif" alt="alt" /><img src="images/img2.gif" alt="alt" /><img src="images/img3.gif" alt="alt" /><img src="images/img4.gif" alt="alt" />
+        </div><!--copyright	end-->
+    </div><!--footer	end-->
+</div><!--container	end-->
+</body>
+</html>

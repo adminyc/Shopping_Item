@@ -1,0 +1,84 @@
+input{width: 180px;}
+body{padding: 0;}
+
+.u-logo-img1, .u-logo-img2, .u-logo-img3,.u-tab .tab0, .u-tab .tab1{background:url(//haitao.nos.netease.com/6315f6c8-5227-4ca5-9e45-e21557db8eb5_84_125.png) no-repeat;}
+.m-cnt .u-logo .u-logo-img1{background-position: 0px -34px;}
+.m-cnt .u-logo .u-logo-img2{background-position: -68px -34px;}
+.m-cnt .u-logo .u-logo-img3{background-position: -36px -34px;}
+.u-tab .tab0{background-position: 0px 0px;}
+.u-tab .tab1{background-position: 0px -15px;}
+
+.g-bd{width: 350px;border-radius:0;background-color: transparent;}
+.m-header,.m-footer,.m-cnt .m-unlogin .u-regbtn{display: none;}
+.m-cnt{width: 270px;padding:20px 40px 15px;background-color:#fff;}
+.m-cnt .u-input input{padding-left: 0px;height: 30px;line-height: 30px;font-size:14px;font-weight: normal;}
+.m-cnt .u-input input::-webkit-input-placeholder{line-height:30px;height:30px;}
+
+.m-cnt .m-nerror .ferrorhead, .m-cnt .m-nerror .ferrorhead2{width:250px;}
+.m-cnt .m-unlogin .b-unlogn{border-right: none;}
+.m-cnt .m-unlogin .forgetpwd,.m-cnt .m-unlogin .forgetpwdReg{float: right;}
+.m-cnt .m-unlogin .b-unlogn label:hover,.m-cnt .m-unlogin .forgetpwd:hover, .m-cnt .m-unlogin .forgetpwdReg:hover{color:#e31436;}
+.m-cnt #login-form .u-label{width: 188px;}
+.m-cnt .m-nerror{margin-top:10px;}
+
+.m-cnt #login-form .m-sug{width:268px;top:33px;left:-40px;max-height:150px;}
+.m-sug .itm{height: 14px;min-width:213px;_width:213px;}
+.m-cnt #login-form .m-sug .itm{padding-left:39px;}
+.m-cnt #login-form .m-ckcnt input.cktext{width: 112px;padding-left: 8px;}
+.m-cnt .ckin{width: 130px;}
+
+.m-cnt .inputbox{height: 34px;line-height: 30px;border-color:#d5d5d5;border-radius:2px;}
+.m-cnt .u-input{height: 30px;margin: 2px 0;}
+.m-cnt .u-logo div{width:17px;height:18px;margin-top: 8px;}
+.m-cnt .u-success{margin-top: 7px;}
+.m-cnt .ScapTcha .u-success{margin-top: 1px;}
+.m-cnt .u-logo{width: 17px;padding: 0 11px;}
+
+.m-cnt .ckimg{height: 34px;}
+.m-ckcnt .u-input{border-left:none;}
+
+.u-loginbtn{height: 36px;background-color:#E31436;color: #fff;border-radius: 2px;line-height: 36px;font-size: 14px;}
+.u-loginbtn:hover{background-color:#F5345E}
+
+.w-exception{width: 350px;height: 270px;background-color: #fff;}
+.w-exception .cnt{padding: 10px;}
+.w-exception .cnt .note{margin:6px 0 26px;font-size: 20px;line-height: 28px;}
+.w-exception .warnlogo{width: 44px;height: 44px;margin: 35px auto 6px;background:url(//haitao.nos.netease.com/1e819814-17db-40f5-a66c-3c7fd7561d16_44_44.png) 0 0;}
+.w-exception .btnbox{margin-left: 54px;}
+.w-exception .btnbox a{float: none;width: 90px;height: 34px;margin: 0 10px;line-height: 34px;font-size: 14px;border:1px solid #e31436;background-color: #e31436;color:#fff;}
+.w-exception .btnbox .j-redirect{background-color: #fff; color: #333;border-color: #ccc;}
+
+.w-exception-normal{width: 350px;height: 270px;background-color: #fff;}
+.w-exception-normal .cnt{padding: 10px;}
+.w-exception-normal .cnt .note{margin:6px 0 26px;font-size: 20px;line-height: 28px;}
+.w-exception-normal .warnlogo{width:44px;height:44px;margin:35px auto 6px;
+    /* background:url("../../../images/login/warning.png") 0 0; */
+}
+.w-exception-normal .btnbox{margin-left: 50px; width: 230px;}
+.w-exception-normal .btnbox a{float: left;width: 90px;height: 34px;margin: 0 10px;line-height: 34px;font-size: 14px;border:1px solid #e31436;background-color: #e31436;color:#fff;}
+.w-exception-normal .btnbox .j-redirect{background-color: #fff; color: #333;border-color: #ccc;}
+
+#loading{display: none;}
+.m-cnt .ncpt_widget .ncpt_slide_bg{border:1px solid #ddd;background:#eee;}
+.ncpt_widget .ncpt_hint_txt{color:#666;}
+
+.m-nerror.f-dn{display: block !important;visibility: hidden;height: 17px;overflow: hidden;}
+.m-cnt .m-nerror{margin-top:6px;}
+.loginbox{margin-top:7px;margin-bottom:10px;}
+.m-cnt .m-unlogin{padding:0 0 15px 0;}
+
+.u-tab{width:270px;padding:0 0 10px 0;}
+.u-tab .tab1,.u-tab .tab0{height: 14px;padding-left: 17px;line-height: 14px;}
+.u-tab .tab1:hover,.u-tab .tab0:hover{color:#e31436;}
+.u-tab .tab1:hover{background-position:0 -110px;}
+.u-tab .tab0:hover{background-position:0 -95px;}
+
+.m-cnt .m-pc{width:268px;}
+.m-pccnt{position:relative;}
+.m-cnt .m-pcbox{position:relative;}
+.m-cnt .pcbtn{position:absolute;top:1px;right:1px;z-index: 100;}
+.m-cnt .pcbtn a{height:34px;width:96px;line-height:32px;background-color:#eee;color:#333;border-left: #d5d5d5 solid 1px;}
+.m-cnt .pcbtn a:hover{color:#e31436;background-color:#f6f6f6;}
+.m-cnt .m-pc .pcin{padding-left:8px;}
+.ScapTcha div.statusTxt{margin-top:4px;}
+.m-cnt .reg-phone-nomobile-box .u-toggleitlbox .j-cgp {display: none;}
