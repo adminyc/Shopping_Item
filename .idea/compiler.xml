@@ -8,6 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="entitys-brother" />
+        <module name="eureka6001" />
+        <module name="front-shopping1" />
+        <module name="wykl-consumer" />
       </profile>
     </annotationProcessing>
   </component>
