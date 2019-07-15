@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+        <relativePath/>
+    </parent>
+
     <groupId>com.wykl</groupId>
     <artifactId>Y2_course_Shopping</artifactId>
     <packaging>pom</packaging>
@@ -11,6 +18,9 @@
     <!-- 用于聚合(聚合体) 旗下的所有子项目 -->
     <modules>
         <module>entitys-brother</module>
+        <module>front-shopping1</module>
+        <module>eureka6001</module>
+        <module>wykl-consumer</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
