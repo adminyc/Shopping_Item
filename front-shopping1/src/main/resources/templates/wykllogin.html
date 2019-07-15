@@ -13,6 +13,7 @@
     进口美食 ，进口美妆、进口电子数码，更多产品正陆续推出。">
     <!-- for 360 browser --><meta name="renderer" content="webkit">
     <link rel="shortcut icon" href="img/eb51812a-63f4-42d4-ba23-5e7406f859be_16_16.ico">
+    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- 性能监控脚本 --> <!-- will be included in meta.html -->
     <script type="text/javascript" async="" src="js/conversion_async.js"></script>
     <script type="text/javascript" async="" src="js/analytics.js"></script>
@@ -267,10 +268,6 @@
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <!-- 自己写的js -->
     <script type="text/javascript">
-        $(function () {
-
-
-        })
         function bianemail () {
             var phoneid=document.getElementById("phonelogin");
             phoneid.style.color = "black";
@@ -303,12 +300,14 @@
                 if(userphone.value==''){
                     error = "手机号不能为空";
                 }
+                $(userphone).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error+"</div>";
                 phonrErr.style.marginTop="10px";
                 phonrErr.className("m-nerror");
                 return false;
             }else if(pattern.test(userphone.value)){
+                $(userphone).parent().parent().css("border-color","#d5d5d5");
                 phonrErr.innerHTML="";
                 phonrErr.style.marginTop="30px";
                 return true;
@@ -324,12 +323,14 @@
                 if(userphone.value==''){
                     error = "短信验证码不能为空";
                 }
+                $(userphone).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error+"</div>";
                 phonrErr.style.marginTop="10px";
                 phonrErr.className("m-nerror");
                 return false;
             }else if(pattern.test(userphone.value)){
+                $(userphone).parent().parent().css("border-color","#d5d5d5");
                 phonrErr.innerHTML="";
                 phonrErr.style.marginTop="30px";
                 return true;
@@ -349,6 +350,7 @@
                 if(userphone.value==''){
                     error = "手机号不能为空";
                 }
+                $(userphone).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error+"</div>";
                 phonrErr.style.marginTop="10px";
@@ -359,12 +361,15 @@
                 if(userphone1.value==''){
                     error1 = "短信验证码不能为空";
                 }
+                $(userphone1).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error1+"</div>";
                 phonrErr.style.marginTop="10px";
                 phonrErr.className("m-nerror");
                 return false;
             }else{
+                $(userphone).parent().parent().css("border-color","#d5d5d5");
+                $(userphone1).parent().parent().css("border-color","#d5d5d5");
                 phonrErr.innerHTML="";
                 phonrErr.style.marginTop="30px";
                 return true;
@@ -384,6 +389,7 @@
                 if(userphone.value==''){
                     error = "邮箱不能为空";
                 }
+                $(userphone).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error+"</div>";
                 phonrErr.style.marginTop="10px";
@@ -394,12 +400,15 @@
                 if(userphone1.value==''){
                     error1 = "密码不能为空";
                 }
+                $(userphone1).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error1+"</div>";
                 phonrErr.style.marginTop="10px";
                 phonrErr.className("m-nerror");
                 return false;
             }else{
+                $(userphone).parent().parent().css("border-color","#d5d5d5");
+                $(userphone1).parent().parent().css("border-color","#d5d5d5");
                 phonrErr.innerHTML="";
                 phonrErr.style.marginTop="30px";
                 return true;
@@ -415,12 +424,14 @@
                 if(userphone.value==''){
                     error = "邮箱不能为空";
                 }
+                $(userphone).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error+"</div>";
                 phonrErr.style.marginTop="10px";
                 phonrErr.className("m-nerror");
                 return false;
             }else if(pattern.test(userphone.value)){
+                $(userphone).parent().parent().css("border-color","#d5d5d5");
                 phonrErr.innerHTML="";
                 phonrErr.style.marginTop="30px";
                 return true;
@@ -436,21 +447,26 @@
                 if(userphone.value==''){
                     error = "密码不能为空";
                 }
+                $(userphone).parent().parent().css("border-color","#FA6060");
                 phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
                     "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error+"</div>";
                 phonrErr.style.marginTop="10px";
                 phonrErr.className("m-nerror");
                 return false;
             }else if(pattern.test(userphone.value)){
+                $(userphone).parent().parent().css("border-color","#d5d5d5");
                 phonrErr.innerHTML="";
                 phonrErr.style.marginTop="30px";
                 return true;
             }
         }
+        //文本框获取焦点变色
+        function bianfocus(obj) {
+            $(obj).parent().parent().css("border-color","#4AAFE9");
+        }
 
 
 
-        
     </script>
 </head>
 <body id="index-netease-com">      <!-- "网站下压BANENR"模块: 文本/图片 -->   <!-- topOnlineNotice && showTopNotice -->  <!-- !pcIndexIframe -->  <!-- 考拉客服sdk --><script type="text/javascript">(function () {
@@ -509,51 +525,52 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                     <div class="m-cnt" id="auto-id-1562925174297">
                         <form action="loca.html" id="login-form" onsubmit="return tijiao1()">
                             <div class="m-container" id="auto-id-1562925174302">
-                            <div id="way"></div>
-                            <div class="u-tab f-cb" id="auto-id-1562925174305">
-                                <a class="tab0" id="auto-id-1562925174309" onclick="bianemail()">使用网易邮箱登录</a>
-                            </div>
-
-                            <div class="inputbox" id="auto-id-1562925174306">
-                                <div class="u-logo" id="auto-id-1562925174304"><div class="u-logo-img3" id="auto-id-1562925174308"></div></div>
-
-                                <div class="u-input box">
-                                    <label class="u-label f-dn">请输入手机号</label>
-                                    <input onblur="checkPhone()" type="tel" id="phoneipt"
-                                           placeholder="请输入手机号" name="email"
-                                           class="dlemail j-nameforslide" autocomplete="off"
-                                           tabindex="1" spellcheck="false" maxlength="11">
+                                <div id="way"></div>
+                                <div class="u-tab f-cb" id="auto-id-1562925174305">
+                                    <a class="tab0" id="auto-id-1562925174309" onclick="bianemail()">使用网易邮箱登录</a>
                                 </div>
 
-                                <div class="u-tip">
-                                    <div class="u-success u-clear"></div>
-                                </div>
-                            </div>
+                                <div class="inputbox" id="auto-id-1562925174306">
+                                    <div class="u-logo" id="auto-id-1562925174304"><div class="u-logo-img3" id="auto-id-1562925174308"></div></div>
 
-                            <div class="m-pccnt f-cb">
-                                <div class="m-pcbox">
-                                    <div class="inputbox m-mb m-pc f-fl" id="auto-id-1562925174307">
-                                        <div class="u-input">
-                                            <label class="u-label f-dn">请输入短信验证码</label>
-                                            <input type="tel" placeholder="请输入短信验证码"
-                                                   name="phonecode" class="j-inputtext pcin" data-max-length="6"
-                                                   maxlength="6" tabindex="5" spellcheck="false"
-                                                   autocomplete="off" id="auto-id-1562925174303"
-                                                   onblur="checkNote()"></div>
-                                        <div class="u-tip"><div class="u-success u-clear"></div></div>
+                                    <div class="u-input box">
+                                        <label class="u-label f-dn">请输入手机号</label>
+                                        <input onfocus="bianfocus(this)" onblur="checkPhone()" type="tel" id="phoneipt"
+                                               placeholder="请输入手机号" name="email"
+                                               class="dlemail j-nameforslide" autocomplete="off"
+                                               tabindex="1" spellcheck="false" maxlength="11">
                                     </div>
-                                    <div class="pcbtn f-fl">
-                                        <a href="javascript:void(0);" class="tabfocus getsmscode" id="auto-id-1562925174293">获取验证码</a>
+
+                                    <div class="u-tip">
+                                        <div class="u-success u-clear"></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="m-nerror" id="nerror1" style="margin-top: 30px">
 
+                                <div class="m-pccnt f-cb">
+                                    <div class="m-pcbox">
+
+                                        <div class="inputbox m-mb m-pc f-fl" id="auto-id-1562925174307">
+                                            <div class="u-input">
+                                                <label class="u-label f-dn">请输入短信验证码</label>
+                                                <input onfocus="bianfocus(this)" type="tel" placeholder="请输入短信验证码"
+                                                       name="phonecode" class="j-inputtext pcin" data-max-length="6"
+                                                       maxlength="6" tabindex="5" spellcheck="false"
+                                                       autocomplete="off" id="auto-id-1562925174303"
+                                                       onblur="checkNote()"></div>
+                                            <div class="u-tip"><div class="u-success u-clear"></div></div>
+                                        </div>
+                                        <div class="pcbtn f-fl">
+                                            <a href="javascript:void(0);" class="tabfocus getsmscode" id="auto-id-1562925174293">获取验证码</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-nerror" id="nerror1" style="margin-top: 30px">
+
+                                </div>
+                                <div class="f-cb loginbox">
+                                    <a id="submitBtn" tabindex="8" class="u-loginbtn btncolor tabfocus"onclick="sub()">登 录</a>
+                                </div>
                             </div>
-                            <div class="f-cb loginbox">
-                                <a id="submitBtn" tabindex="8" class="u-loginbtn btncolor tabfocus"onclick="sub()">登 录</a>
-                            </div>
-                        </div>
                             <div class="m-unlogin" id="auto-id-1562925174298">
                                 <!--&lt;!&ndash;Regular if5&ndash;&gt;-->
                                 <div class="b-unlogn" id="auto-id-1562925174301">
@@ -580,7 +597,7 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                     <div class="u-input box auto-1563018291586-parent">
                                         <label class="u-label f-dn" id="auto-id-1563018291616" style="display: block;">
                                             网易邮箱帐号</label>
-                                        <input onblur="checkEmail()" data-placeholder="网易邮箱帐号" name="email" data-type="email" data-loginname="loginEmail"
+                                        <input onfocus="bianfocus(this)" onblur="checkEmail()" data-placeholder="网易邮箱帐号" name="email" data-type="email" data-loginname="loginEmail"
                                                data-required="true" class="j-inputtext dlemail j-nameforslide" type="text" autocomplete="off"
                                                tabindex="1" spellcheck="false" id="auto-id-1563018291602" placeholder="网易邮箱帐号">
                                         <div class="auto-1563018291586 m-sug" style="visibility: hidden;" id="auto-id-1563018291632"></div><span class="pr-domain j-prdomain f-dn"></span></div>
@@ -590,37 +607,41 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                 </div>
                                 <div class="fur-change-email" id="auto-id-1563018291658">
 
-                                </div><div class="inputbox" id="auto-id-1563018291661">
-                                <div class="u-logo" id="auto-id-1563018291662">
-                                    <div class="u-logo-img2"></div>
                                 </div>
-                                <div class="u-input box">
-                                    <label class="u-label f-dn" id="auto-id-1563018291637" style="display: block;">
-                                        密码</label><input type="password" style="display:none;width:0;height:0;">
-                                    <input onblur="checkPass()" data-placeholder="密码" name="password" maxlength="50" data-required="true"
-                                           class="j-inputtext dlpwd" type="password" autocomplete="new-password"
-                                           data-max-length="50" tabindex="2" spellcheck="false" id="auto-id-1563018291605"
-                                           placeholder="密码">
-                                    <input maxlength="50" data-placeholder="密码" type="text" id="pwdtext" class="u-pwdtext" placeholder="密码">
+                                <div class="inputbox" id="auto-id-1563018291661">
+                                    <div class="u-logo" id="auto-id-1563018291662">
+                                        <div class="u-logo-img2"></div>
+                                    </div>
+                                    <div class="u-input box">
+                                        <label class="u-label f-dn" id="auto-id-1563018291637" style="display: block;">
+                                            密码</label>
+                                        <input type="password" style="display:none;width:0;height:0;">
+                                        <input onfocus="bianfocus(this)" onblur="checkPass()" data-placeholder="密码" name="password" maxlength="50" data-required="true"
+                                               class="j-inputtext dlpwd" type="password" autocomplete="new-password"
+                                               data-max-length="50" tabindex="2" spellcheck="false" id="auto-id-1563018291605"
+                                               placeholder="密码">
+                                        <input maxlength="50" data-placeholder="密码" type="text" id="pwdtext" class="u-pwdtext" placeholder="密码">
+                                    </div>
+                                    <div class="u-tip" id="auto-id-1563018291643" style="display: none;">
+                                        <div class="u-success u-clear"></div></div>
                                 </div>
-                                <div class="u-tip" id="auto-id-1563018291643" style="display: none;">
-                                    <div class="u-success u-clear"></div></div></div><div class="ckbox m-ckcnt f-cb f-dn">
-                                <div class="inputbox ckin">
-                                    <div class="u-input">
-                                        <label class="u-label f-dn" id="auto-id-1563018291646" style="display: block;">
-                                            验证码</label><input data-placeholder="验证码" name="checkcode" class="j-inputtext cktext"
-                                                              type="text" data-required="true" data-max-length="4" maxlength="4"
-                                                              data-pattern="^[0-9a-zA-Z]{4,6}$" tabindex="3" spellcheck="false" autocomplete="off"
-                                                              id="auto-id-1563018291608" placeholder="验证码"></div><div class="u-tip"
-                                                                                                                      id="auto-id-1563018291652"
-                                                                                                                      style="display: none;">
-                                    <div class="u-success u-clear"></div>
-                                </div>
-                                    <div class="u-tip">
-                                        <div class="u-success u-suc"></div>
-                                    </div></div>
-                                <div class="inputbox ckimgbox f-fr">
-                                    <img class="ckimg" title="点击刷新验证码" alt="点击获取验证码" onerror="" id="auto-id-1563018291654"></div></div><div class="ckbox m-ckcnt slidebox f-cb f-dn" style="position: relative;"><div class="ScapTcha" id="ScapTcha"></div><input type="hidden" id="pwd" value=""><input type="hidden" id="ct" value=""><input name="slidecap" style="height:0;width:0;display:none;" type="text" data-required="true" value="" id="auto-id-1563018291611"></div><div class="m-etbox" style="display:none;"><div class="ettip"><div class="etimgbox">
+                                <div class="ckbox m-ckcnt f-cb f-dn">
+                                    <div class="inputbox ckin">
+                                        <div class="u-input">
+                                            <label class="u-label f-dn" id="auto-id-1563018291646" style="display: block;">
+                                                验证码</label><input data-placeholder="验证码" name="checkcode" class="j-inputtext cktext"
+                                                                  type="text" data-required="true" data-max-length="4" maxlength="4"
+                                                                  data-pattern="^[0-9a-zA-Z]{4,6}$" tabindex="3" spellcheck="false" autocomplete="off"
+                                                                  id="auto-id-1563018291608" placeholder="验证码"></div><div class="u-tip"
+                                                                                                                          id="auto-id-1563018291652"
+                                                                                                                          style="display: none;">
+                                        <div class="u-success u-clear"></div>
+                                    </div>
+                                        <div class="u-tip">
+                                            <div class="u-success u-suc"></div>
+                                        </div></div>
+                                    <div class="inputbox ckimgbox f-fr">
+                                        <img class="ckimg" title="点击刷新验证码" alt="点击获取验证码" onerror="" id="auto-id-1563018291654"></div></div><div class="ckbox m-ckcnt slidebox f-cb f-dn" style="position: relative;"><div class="ScapTcha" id="ScapTcha"></div><input type="hidden" id="pwd" value=""><input type="hidden" id="ct" value=""><input name="slidecap" style="height:0;width:0;display:none;" type="text" data-required="true" value="" id="auto-id-1563018291611"></div><div class="m-etbox" style="display:none;"><div class="ettip"><div class="etimgbox">
                                 <div class="img etimg"></div>
                             </div><div class="ettext"></div>
                             </div>
