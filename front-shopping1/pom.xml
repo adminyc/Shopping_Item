@@ -48,6 +48,25 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- 发送短信验证引入的三个jar -->
+        <!-- https://mvnrepository.com/artifact/commons-httpclient.wso2/commons-httpclient -->
+        <!--<dependency>
+            <groupId>apache-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>apache-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0.4-jboss</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec.wso2</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.3.0.wso2v1</version>
+        </dependency>-->
+
 
     </dependencies>
 
