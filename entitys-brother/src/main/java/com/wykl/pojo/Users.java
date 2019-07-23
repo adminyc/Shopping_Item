@@ -16,7 +16,7 @@ public class Users {
     //用户名
     private String username;
     //登录名
-    private String loginname;
+    private String uname;
     //密码
     private String password;
     //证件类型
@@ -57,5 +57,6 @@ public class Users {
     private String encrypted;
     //密保答案
     private String encryptedanswer;
-
+    //新老用户
+    private int oldandnew;
 }
