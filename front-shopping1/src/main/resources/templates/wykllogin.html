@@ -2,6 +2,7 @@
 <HTML lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
+        <link rel="shortcut icon" href="img/eb51812a-63f4-42d4-ba23-5e7406f859be_16_16.ico">
         <link href="//haitao.nos.netease.com" rel="dns-prefetch">
         <link href="//nos.netease.com" rel="dns-prefetch">
         <link href="//mm.bst.126.net" rel="dns-prefetch">
@@ -12,13 +13,12 @@
         <meta name="description" content="网易考拉-安全、放心的跨境海淘网站，官方认证，正品保证。轻松购遍海外进口母婴，
     进口美食 ，进口美妆、进口电子数码，更多产品正陆续推出。">
         <!-- for 360 browser --><meta name="renderer" content="webkit">
-        <link rel="shortcut icon" href="img/eb51812a-63f4-42d4-ba23-5e7406f859be_16_16.ico">
         <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- 性能监控脚本 --> <!-- will be included in meta.html -->
         <script type="text/javascript" async="" src="js/conversion_async.js"></script>
         <script type="text/javascript" async="" src="js/analytics.js"></script>
         <script async="" src="js/gtm.js"></script>
-        <script type="text/javascript" src="js/da.js"></script>
+        <!--<script type="text/javascript" src="js/da.js"></script>-->
         <script async="" src="js/analytics.js"></script>
         <script type="text/javascript" async="" src="js/30570245-83ec-4ff2-a1cf-8ea88b914385.js"></script>
         <script type="text/javascript">
@@ -266,6 +266,7 @@
         </style>
         <link rel="stylesheet" type="text/css" href="css/urslogin-web.css">
         <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+        <link rel="stylesheet" href="layui/css/layui.css" media="all">
         <!-- 自己写的js -->
         <script type="text/javascript">
             function bianemail () {
@@ -367,6 +368,14 @@
                     phonrErr.style.marginTop="10px";
                     phonrErr.className("m-nerror");
                     return false;
+                }else if(userphone1.value!=code){   //验证码输入有误
+                    var error1 = '验证码输入有误！';
+                    $(userphone1).parent().parent().css("border-color","#FA6060");
+                    phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
+                        "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error1+"</div>";
+                    phonrErr.style.marginTop="10px";
+                    phonrErr.className("m-nerror");
+                    return false;
                 }else{
                     $(userphone).parent().parent().css("border-color","#d5d5d5");
                     $(userphone1).parent().parent().css("border-color","#d5d5d5");
@@ -407,29 +416,6 @@
                     phonrErr.className("m-nerror");
                     return false;
                 }else{
-                    /*alert("okoko");
-                    $.ajax({
-                        type:'post',
-                        url:'login-wykl',
-                        cache: false,
-                        data:data,  //重点必须为一个变量如：data
-                        dataType:'boolean',
-                        success:function(data){
-                            alert(typeof(data));
-                            if (data){
-                                window.location.href="loca.html";
-                                return false;
-                            }else{
-                                var error1 = '手机号或验证码有误';
-                                phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
-                                    "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error1+"</div>";
-                            }
-                            alert('success');
-                        },
-                        error:function(){
-                            alert("请求失败")
-                        }
-                    })*/
                     $(userphone).parent().parent().css("border-color","#d5d5d5");
                     $(userphone1).parent().parent().css("border-color","#d5d5d5");
                     phonrErr.innerHTML="";
@@ -541,7 +527,8 @@
 顶部logo&广告
 noAdds=true 只显示左侧logo
 noSteps=false stepId=1~3 购物车&订单确认头部
---> <nav id="topTabPlaceHolder" class="f-dn"></nav>
+-->
+        <nav id="topTabPlaceHolder" class="f-dn"></nav>
         <header id="docHead" class="j-indexTopFixed">
             <div id="docHeadWrap">
                 <a href="" class="logokaola " title="网易考拉" data-param="zn=top"></a>
@@ -563,7 +550,7 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                             <div data-v-9afc696a="" class="top">
                                 <div data-v-9afc696a="" class="name head1 j-tag active" id="phonelogin" onclick="bianphone()">手机号登录</div>
                                 <span data-v-9afc696a="" class="line">&nbsp;</span>
-                                <div data-v-9afc696a="" class="name head2 j-tag" id="emaillogin" onclick="bianemail()">邮箱登录</div>
+                                <div data-v-9afc696a="" class="name head2 j-tag" id="emaillogin">扫码登录</div>
                             </div>
 
 
@@ -572,7 +559,7 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                     <div class="m-container" id="auto-id-1562925174302">
                                         <div id="way"></div>
                                         <div class="u-tab f-cb" id="auto-id-1562925174305">
-                                            <a class="tab0" id="auto-id-1562925174309" onclick="bianemail()">使用网易邮箱登录</a>
+                                            <!--<a class="tab0" id="auto-id-1562925174309" onclick="bianemail()">使用网易邮箱登录</a>-->
                                         </div>
 
                                         <div class="inputbox" id="auto-id-1562925174306">
@@ -580,7 +567,8 @@ noSteps=false stepId=1~3 购物车&订单确认头部
 
                                             <div class="u-input box">
                                                 <label class="u-label f-dn">请输入手机号</label>
-                                                <input value="13142118989" onfocus="bianfocus(this)" onblur="checkPhone()" type="tel"
+                                            <!--  value="13142117090"  -->
+                                                <input onfocus="bianfocus(this)" onblur="checkPhone()" type="tel"
                                                        id="phoneipt"
                                                        placeholder="请输入手机号" name="mobilephoneno"
                                                        class="dlemail j-nameforslide" autocomplete="off"
@@ -594,11 +582,10 @@ noSteps=false stepId=1~3 购物车&订单确认头部
 
                                         <div class="m-pccnt f-cb">
                                             <div class="m-pcbox">
-
                                                 <div class="inputbox m-mb m-pc f-fl" id="auto-id-1562925174307">
                                                     <div class="u-input">
                                                         <label class="u-label f-dn">请输入短信验证码</label>
-                                                        <input value="123456" onfocus="bianfocus(this)" type="tel" placeholder="请输入短信验证码"
+                                                        <input onfocus="bianfocus(this)" type="tel" placeholder="请输入短信验证码"
                                                                name="password" class="j-inputtext pcin" data-max-length="6"
                                                                maxlength="6" tabindex="5" spellcheck="false"
                                                                autocomplete="off" id="auto-id-1562925174303"
@@ -606,7 +593,84 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                                     <div class="u-tip"><div class="u-success u-clear"></div></div>
                                                 </div>
                                                 <div class="pcbtn f-fl">
-                                                    <a href="javascript:void(0);" class="tabfocus getsmscode" id="auto-id-1562925174293">获取验证码</a>
+                                                    <!-- 此处不能写button -->
+                                                    <!--<button  style="width: 100px;height:34px " onclick="sendCode(this)">获取验证码</button>-->
+                                                    <a href="javascript:void(0);" onclick="sendCode(this)" style="font-size: 12px" class="tabfocus getsmscode" id="auto-id-1562925174293">获取验证码</a>
+                                                    <script src="layui/layui.all.js"></script>
+                                                    <script type="text/javascript">
+                                                        //定义变量
+                                                        var clock = '';
+                                                        var nums = 60;
+                                                        var btn;
+                                                        var code = "";
+                                                        function sendCode(thisBtn) {
+                                                            var userphone = document.getElementById('phoneipt');
+                                                            var phonrErr = document.getElementById('nerror1');
+                                                            var pattern = /^1[34578]\d{9}$/; //验证手机号正则表达式
+                                                            if(!pattern.test(userphone.value)) {
+                                                                var error = '手机号格式错误';
+                                                                if (userphone.value == '') {
+                                                                    error = "手机号不能为空";
+                                                                }
+                                                                $(userphone).parent().parent().css("border-color", "#FA6060");
+                                                                phonrErr.innerHTML = "<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
+                                                                    "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">" + error + "</div>";
+                                                                phonrErr.style.marginTop = "10px";
+                                                                phonrErr.className("m-nerror");
+                                                                return;
+                                                            }
+                                                            var flag = false;
+                                                            //调用服务端发送短信服务,给用户发送短信验证码
+                                                            $.ajax({
+                                                                //发送短信的请求方式
+                                                                type: "post",
+                                                                //路径
+                                                                url: "phoneexit",
+                                                                //同步请求
+                                                                async:false,
+                                                                //传到后台的参数
+                                                                data: {"phone":userphone.value},
+                                                                datatype:"text",
+                                                                //返回结果
+                                                                success:function(data){
+                                                                    if(data == 0){
+                                                                        layer.msg('该手机号尚未注册<br>需进行注册', {
+                                                                            time: 3000, //3s后自动关闭
+                                                                            btn: ['立即注册', '取消'],
+                                                                            yes: function(index){
+                                                                                parent.layer.closeAll(); //关闭所有的弹窗
+                                                                                window.open('register.html', '_self');
+                                                                            },
+                                                                        });
+                                                                    }else{
+                                                                        code = data;
+                                                                        flag = true;
+                                                                    }
+                                                                }
+                                                            });
+                                                            if(flag){
+                                                                btn = thisBtn;
+                                                                btn.disabled = true; //将按钮置为不可点击
+                                                                btn.innerHTML = nums + '秒后重新获取';
+                                                                clock = setInterval(doLoop, 1000); //一秒执行一次,这是一个定时器
+                                                            }
+                                                        }
+                                                        function doLoop() {
+                                                            nums--;
+                                                            if (nums > 0) {
+                                                                $('#auto-id-1562925174293').removeAttr('href');//去掉a标签中的href属性
+                                                                $('#auto-id-1562925174293').removeAttr('onclick');//去掉a标签中的onclick事件
+                                                                btn.innerHTML = nums + '秒后重新获取';
+                                                            } else {
+                                                                $('#auto-id-1562925174293').attr("href","javascript:void(0);");
+                                                                $('#auto-id-1562925174293').attr("onclick","sendCode(this);");
+                                                                clearInterval(clock); //清除js定时器
+                                                                btn.disabled = false;
+                                                                btn.innerHTML = '获取验证码';
+                                                                nums = 60; //重置时间
+                                                            }
+                                                        }
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>
@@ -619,11 +683,10 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                     </div>
                                     <div class="m-unlogin" id="auto-id-1562925174298">
                                         <!--&lt;!&ndash;Regular if5&ndash;&gt;-->
-                                        <div class="b-unlogn" id="auto-id-1562925174301">
-                                <span onclick="selcheck()"
-                                      class="u-checkbox tabfocus u-checkbox-select"
-                                      id="auto-id-1562933411059">
-                                </span>
+                                        <div class="b-unlogn" id="auto-id-1562925174301">   <!--  onclick="selcheck()" -->
+                                                        <span class="u-checkbox tabfocus u-checkbox-select"
+                                                              id="auto-id-1562933411059">
+                                                        </span>
                                             <label for="un-login" id="auto-id-1562933411058">10天免登录</label>
                                         </div>
 
@@ -690,21 +753,27 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                                     <div class="u-success u-suc"></div>
                                                 </div></div>
                                             <div class="inputbox ckimgbox f-fr">
-                                                <img class="ckimg" title="点击刷新验证码" alt="点击获取验证码" onerror="" id="auto-id-1563018291654"></div></div><div class="ckbox m-ckcnt slidebox f-cb f-dn" style="position: relative;"><div class="ScapTcha" id="ScapTcha"></div><input type="hidden" id="pwd" value=""><input type="hidden" id="ct" value=""><input name="slidecap" style="height:0;width:0;display:none;" type="text" data-required="true" value="" id="auto-id-1563018291611"></div><div class="m-etbox" style="display:none;"><div class="ettip"><div class="etimgbox">
-                                        <div class="img etimg"></div>
-                                    </div><div class="ettext"></div>
+                                                <img class="ckimg" title="点击刷新验证码" alt="点击获取验证码" onerror="" id="auto-id-1563018291654"></div></div><div class="ckbox m-ckcnt slidebox f-cb f-dn" style="position: relative;">
+                                        <div class="ScapTcha" id="ScapTcha"></div>
+                                        <input type="hidden" id="pwd" value="">
+                                        <input type="hidden" id="ct" value="">
+                                        <input name="slidecap" style="height:0;width:0;display:none;" type="text" data-required="true" value="" id="auto-id-1563018291611">
                                     </div>
-                                    </div>
+                                        <div class="m-etbox" style="display:none;">
+                                            <div class="ettip"><div class="etimgbox">
+                                                <div class="img etimg"></div>
+                                            </div><div class="ettext"></div>
+                                            </div>
+                                        </div>
                                         <!--<div class="m-nerror" id="nerror2" style="margin-top: 30px">-->
                                         <div class="m-nerror" id="nerror2" style="margin-top: 30px"></div>
                                         <div class="f-cb loginbox">
                                             <a href="javascript:void(0);" onclick="subemail()" id="dologin" data-action="dologin" class="u-loginbtn btncolor tabfocus btndisabled"
                                                tabindex="8">登&nbsp;&nbsp;录</a></div><div class="m-unlogin" id="auto-id-1563018291660">
-                                        <div class="b-unlogn j-unlogn">
-                                    <span onclick="selcheck()"
-                                          class="u-checkbox tabfocus u-checkbox-select"
-                                          id="auto-id-1562933411060">
-                                </span>
+                                        <div class="b-unlogn j-unlogn"><!--  onclick="selcheck()" -->
+                                                        <span class="u-checkbox tabfocus u-checkbox-select"
+                                                              id="auto-id-1562933411060">
+                                                        </span>
                                             <!--<span class="u-checkbox tabfocus u-checkbox-select">-->
                                             <input id="un-login" type="checkbox" name="un-login" class="un-login">
                                             </span>
@@ -720,11 +789,6 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                     </div>
                                 </form>
                             </div>
-
-
-
-
-
 
                             <div data-v-9afc696a="" class="proto">
                                 登录即代表您已同意
@@ -750,8 +814,8 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                                         <a data-v-98173a38="" href="javascript:;" class="w-icon w-icon-29 w-icon-29-3"></a>
                                         <span data-v-98173a38="" class="iconmask w-icon w-icon-29-4"></span></li>
                                 </ul>
-                                <a data-v-98173a38="" href="javascript:;" class="gotoreg j-tag">
-                                    手机号快捷注册
+                                <a data-v-98173a38="" href="register.html" class="gotoreg j-tag">
+                                    注册网易通行证
                                     <!--<span data-v-98173a38="" class="arrow w-icon w-icon-30"></span>-->
                                 </a>
                             </section>
@@ -760,63 +824,23 @@ noSteps=false stepId=1~3 购物车&订单确认头部
                         <section data-v-71ef6812="" data-v-17894148="" id="regbox" class="regbox" style="display: none;">
                             <div data-v-71ef6812="" class="top regtop"><span data-v-71ef6812="" class="text">欢迎注册</span>
                                 <span data-v-71ef6812="" class="gotologin j-tag">
-                    已有帐号？
-                <a data-v-71ef6812="" href="javascript:;">去登录&gt;</a></span>
+                                                        已有帐号？
+                                                    <a data-v-71ef6812="" href="javascript:;">去登录&gt;</a></span>
                             </div>
                             <div data-v-71ef6812="" id="loginbox3" class="ph-loading loginbox3">
                                 <iframe name="" id="x-URS-iframe1562917893977.243" scrolling="no" style="width: 100%; height: 100%; border: medium none;
-                        background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"
+                                                    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"
                                         src="https://passport.kaola.com/webzj/v1.0.1/pub/index_reg2_new.html?cd=%2F%2Faccount.kaola.com%2F&amp;cf=public%2Fcommon%2Fstyle%2Furslogin-web.css&amp;MGID=1562917893977.243&amp;wdaId=&amp;pkid=ekcLicp&amp;product=kaola" frameborder="0"></iframe></div></section> <form data-v-17894148="" id="ursKeyForm" method="post" name="ursKeyForm" style="display: none;"><input data-v-17894148="" id="ursKey" name="URS_INFO_ENC" type="text">
-                        </form>
+                    </form>
                     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             </section>
-            <footer data-v-2163ec11="" class="common-footer"><div data-v-2163ec11="" id="aboutNEST"><a data-v-2163ec11="" href="http://ir.netease.com/phoenix.zhtml?c=122303&amp;p=irol-IRHome&amp;no_protofix" rel="nofollow" target="_blank" title="About NetEase">About NetEase</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://gb.corp.163.com/gb/about/overview.html?no_protofix" rel="nofollow" target="_blank" title="公司简介">公司简介</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://gb.corp.163.com/gb/contactus.html?no_protofix" rel="nofollow" target="_blank" title="联系方法">联系方法</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="https://www.kaola.com/footer/friendlylink.shtml" target="_blank" title="友情链接" data-param="zn=footer">友情链接</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://hr.163.com/?no_protofix" rel="nofollow" target="_blank" title="招聘信息">招聘信息</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://help.163.com/?no_protofix" rel="nofollow" target="_blank" title="客户服务">客户服务</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://gb.corp.163.com/gb/legal.html?no_protofix" rel="nofollow" target="_blank" title="隐私政策">隐私政策</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://emarketing.163.com/?no_protofix" rel="nofollow" target="_blank" title="网络营销">网络营销</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="https://www.kaola.com/" target="_blank" title="网易考拉" data-param="zn=footer">网易考拉</a> <br data-v-2163ec11=""> <span data-v-2163ec11="" class="m-license">网络文化经营许可证：浙网文[2016]0155-055号</span> <span data-v-2163ec11="" class="m-license">增值电信业务经营许可证：浙B2-20160288</span> <span data-v-2163ec11="" class="m-license"><a data-v-2163ec11="" href="//pages.kaola.com/pages/activity/Businessentity.shtml" rel="nofollow" target="_blank" title="自营经营者信息">自营经营者信息</a></span> <span data-v-2163ec11="" class="m-license">（浙）网械平台备字[2018]第00007号</span> <br data-v-2163ec11=""> <a data-v-2163ec11="" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802002216&amp;no_protofix"><img data-v-2163ec11="" src="img/f28aa8ee818a42bf832341f605eccefb.png"></a> <a data-v-2163ec11="" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802002216&amp;no_protofix"><span data-v-2163ec11="" style="margin: 0px 0px 0px 5px;">浙公网安备 33010802002216号</span></a> <span data-v-2163ec11="" class="m-license">网易公司版权所有©1997-2019</span> <a data-v-2163ec11="" target="_blank" href="//haitao.nos.netease.com/d37ac4eb-016f-485b-9577-04ae7e0f4bbd.jpg"><span data-v-2163ec11="" style="margin: 0px 0px 0px 20px;">互联网药品信息服务资格证书编号（浙）-2017-0027</span></a> <span data-v-2163ec11="" class="m-license">浙ICP备16011229号-6</span> <div data-v-2163ec11="" class="f-tac"><span data-v-2163ec11="" id="KXYZ"><a data-v-2163ec11="" href="https://ss.knet.cn/verifyseal.dll?sn=e15040881010058239iy2f000000&amp;ct=df&amp;a=1&amp;pa=20160215" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display: inline-block;"><img data-v-2163ec11="" src="img/d720d83b55a04b6f932ea845c673c5bf.png" alt="可信网站"></a></span> <a data-v-2163ec11="" href="http://idinfo.zjaic.gov.cn/bscx.do?method=lzxx&amp;id=3301083301980000040550&amp;no_protofix" target="_blank" class="u-shield">
-                <img data-v-2163ec11="" src="img/d071c0de-5360-4dcb-915a-f9f9bb62a9d5.gif"
-                     alt="工商营业执照网上标识"></a>
-            </div>
-            </div>
+            <footer data-v-2163ec11="" class="common-footer">
+                <div data-v-2163ec11="" id="aboutNEST"><a data-v-2163ec11="" href="http://ir.netease.com/phoenix.zhtml?c=122303&amp;p=irol-IRHome&amp;no_protofix" rel="nofollow" target="_blank" title="About NetEase">About NetEase</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://gb.corp.163.com/gb/about/overview.html?no_protofix" rel="nofollow" target="_blank" title="公司简介">公司简介</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://gb.corp.163.com/gb/contactus.html?no_protofix" rel="nofollow" target="_blank" title="联系方法">联系方法</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="https://www.kaola.com/footer/friendlylink.shtml" target="_blank" title="友情链接" data-param="zn=footer">友情链接</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://hr.163.com/?no_protofix" rel="nofollow" target="_blank" title="招聘信息">招聘信息</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://help.163.com/?no_protofix" rel="nofollow" target="_blank" title="客户服务">客户服务</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://gb.corp.163.com/gb/legal.html?no_protofix" rel="nofollow" target="_blank" title="隐私政策">隐私政策</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="http://emarketing.163.com/?no_protofix" rel="nofollow" target="_blank" title="网络营销">网络营销</a> <span data-v-2163ec11="" class="sep">|</span> <a data-v-2163ec11="" href="https://www.kaola.com/" target="_blank" title="网易考拉" data-param="zn=footer">网易考拉</a> <br data-v-2163ec11=""> <span data-v-2163ec11="" class="m-license">网络文化经营许可证：浙网文[2016]0155-055号</span> <span data-v-2163ec11="" class="m-license">增值电信业务经营许可证：浙B2-20160288</span> <span data-v-2163ec11="" class="m-license"><a data-v-2163ec11="" href="//pages.kaola.com/pages/activity/Businessentity.shtml" rel="nofollow" target="_blank" title="自营经营者信息">自营经营者信息</a></span> <span data-v-2163ec11="" class="m-license">（浙）网械平台备字[2018]第00007号</span> <br data-v-2163ec11=""> <a data-v-2163ec11="" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802002216&amp;no_protofix"><img data-v-2163ec11="" src="img/f28aa8ee818a42bf832341f605eccefb.png"></a> <a data-v-2163ec11="" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802002216&amp;no_protofix"><span data-v-2163ec11="" style="margin: 0px 0px 0px 5px;">浙公网安备 33010802002216号</span></a> <span data-v-2163ec11="" class="m-license">网易公司版权所有©1997-2019</span> <a data-v-2163ec11="" target="_blank" href="//haitao.nos.netease.com/d37ac4eb-016f-485b-9577-04ae7e0f4bbd.jpg"><span data-v-2163ec11="" style="margin: 0px 0px 0px 20px;">互联网药品信息服务资格证书编号（浙）-2017-0027</span></a> <span data-v-2163ec11="" class="m-license">浙ICP备16011229号-6</span> <div data-v-2163ec11="" class="f-tac"><span data-v-2163ec11="" id="KXYZ"><a data-v-2163ec11="" href="https://ss.knet.cn/verifyseal.dll?sn=e15040881010058239iy2f000000&amp;ct=df&amp;a=1&amp;pa=20160215" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display: inline-block;"><img data-v-2163ec11="" src="img/d720d83b55a04b6f932ea845c673c5bf.png" alt="可信网站"></a></span> <a data-v-2163ec11="" href="http://idinfo.zjaic.gov.cn/bscx.do?method=lzxx&amp;id=3301083301980000040550&amp;no_protofix" target="_blank" class="u-shield">
+                    <img data-v-2163ec11="" src="img/d071c0de-5360-4dcb-915a-f9f9bb62a9d5.gif"
+                         alt="工商营业执照网上标识"></a>
+                </div>
+                </div>
             </footer>
         </section>              <!-- 大促底部导航 --> <!-- 底部固定导航栏,具体内容可在ms中配置 -->   <!-- 统一配置数据 --> <script>// 人机识别前端开关，默认关闭
         window.anstipamActiCheatSwitch = 0;
@@ -897,7 +921,7 @@ noSteps=false stepId=1~3 购物车&订单确认头部
             backgroundImageUrl = "img/10f5bc53-0b4b-4456-bd4e-f9953c0d1268.jpg";
         }else{
             // 第三方登录 opener_callback 中跨域问题
-            document.domain = 'kaola.com';
+            //document.domain = 'kaola.com';
         }
         var backgroundImageTarget = null;
         //进入正品保障
@@ -920,5 +944,5 @@ noSteps=false stepId=1~3 购物车&订单确认头部
         <div id="x-URS1562917893977.243" style="display: block;">
         </div>
     </body>
-    <script src="js/message.js"></script>
+    <!--<script src="js/message.js"></script>-->
 </HTML>

@@ -10,7 +10,7 @@
         <script type="text/javascript" async="" src="js/conversion_async.js"></script>
         <script type="text/javascript" async="" src="js/analytics.js"></script>
         <script async="" src="js/gtm.js"></script>
-        <script type="text/javascript" src="js/da.js"></script>
+        <!--<script type="text/javascript" src="js/da.js"></script>-->
         <script async="" src="js/analytics.js"></script>
         <script type="text/javascript" async="" src="js/30570245-83ec-4ff2-a1cf-8ea88b914385.js"></script>
         <script type="text/javascript">
@@ -359,11 +359,21 @@
                     phonrErr.style.marginTop="10px";
                     phonrErr.className("m-nerror");
                     return false;
+                }else if(userphone1.value!=code){   //验证码输入有误
+                    var error1 = '验证码输入有误！';
+                    $(userphone1).parent().parent().css("border-color","#FA6060");
+                    phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
+                        "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error1+"</div>";
+                    phonrErr.style.marginTop="10px";
+                    phonrErr.className("m-nerror");
+                    return false;
                 }else{
                     $(userphone).parent().parent().css("border-color","#d5d5d5");
                     $(userphone1).parent().parent().css("border-color","#d5d5d5");
                     phonrErr.innerHTML="";
                     phonrErr.style.marginTop="30px";
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
                     return true;
                 }
             }
@@ -399,29 +409,6 @@
                     phonrErr.className("m-nerror");
                     return false;
                 }else{
-                    /*alert("okoko");
-                    $.ajax({
-                        type:'post',
-                        url:'login-wykl',
-                        cache: false,
-                        data:data,  //重点必须为一个变量如：data
-                        dataType:'boolean',
-                        success:function(data){
-                            alert(typeof(data));
-                            if (data){
-                                window.location.href="loca.html";
-                                return false;
-                            }else{
-                                var error1 = '手机号或验证码有误';
-                                phonrErr.innerHTML="<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
-                                    "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">"+error1+"</div>";
-                            }
-                            alert('success');
-                        },
-                        error:function(){
-                            alert("请求失败")
-                        }
-                    })*/
                     $(userphone).parent().parent().css("border-color","#d5d5d5");
                     $(userphone1).parent().parent().css("border-color","#d5d5d5");
                     phonrErr.innerHTML="";
@@ -504,6 +491,8 @@
                 });
             })
         </script>
+        <script src="layui/layui.all.js"></script>
+        <link rel="stylesheet" href="layui/css/layui.css" media="all">
     </head>
 <body style="background-color: #F8F8F8" >
     <!--<section data-v-17894148="" id="loginwrap" class="loginWrap" style="margin-right:10px">-->
@@ -512,16 +501,17 @@
             <div data-v-9afc696a="" class="top">
                 <div data-v-9afc696a="" class="name head1 j-tag active" id="phonelogin" onclick="bianphone()">手机号登录</div>
                 <span data-v-9afc696a="" class="line">&nbsp;</span>
-                <div data-v-9afc696a="" class="name head2 j-tag" id="emaillogin" onclick="bianemail()">邮箱登录</div>
+                <div data-v-9afc696a="" class="name head2 j-tag" id="emaillogin">扫码登录</div>
             </div>
 
-
+            <!--  action="login-wykl" -->
             <div class="m-cnt" id="auto-id-1562925174297" style="height:260px"><!--  action="login-wykl" method="post" -->
-                <form action="login-wykl" method="post" id="login-form" onsubmit="return tijiao1()">
+                <form action="login-wykl" method="post" id="login-form"
+                      onsubmit="return tijiao1()"><!-- onsubmit="return tijiao1()" -->
                     <div class="m-container" id="auto-id-1562925174302">
                         <div id="way"></div>
                         <div class="u-tab f-cb" id="auto-id-1562925174305">
-                            <a class="tab0" id="auto-id-1562925174309" onclick="bianemail()">使用网易邮箱登录</a>
+                            <!--<a class="tab0" id="auto-id-1562925174309" onclick="bianemail()">使用网易邮箱登录</a>-->
                         </div>
 
                         <div class="inputbox" id="auto-id-1562925174306">
@@ -529,7 +519,7 @@
 
                             <div class="u-input box">
                                 <label class="u-label f-dn">请输入手机号</label>
-                                <input value="13142118989" onfocus="bianfocus(this)" onblur="checkPhone()" type="tel"
+                                <input onfocus="bianfocus(this)" onblur="checkPhone()" type="tel"
                                        id="phoneipt"
                                        placeholder="请输入手机号" name="mobilephoneno"
                                        class="dlemail j-nameforslide" autocomplete="off"
@@ -547,7 +537,7 @@
                                 <div class="inputbox m-mb m-pc f-fl" id="auto-id-1562925174307">
                                     <div class="u-input">
                                         <label class="u-label f-dn">请输入短信验证码</label>
-                                        <input value="123456" onfocus="bianfocus(this)" type="tel" placeholder="请输入短信验证码"
+                                        <input onfocus="bianfocus(this)" type="tel" placeholder="请输入短信验证码"
                                                name="password" class="j-inputtext pcin" data-max-length="6"
                                                maxlength="6" tabindex="5" spellcheck="false"
                                                autocomplete="off" id="auto-id-1562925174303"
@@ -555,7 +545,83 @@
                                     <div class="u-tip"><div class="u-success u-clear"></div></div>
                                 </div>
                                 <div class="pcbtn f-fl">
-                                    <a href="javascript:void(0);" class="tabfocus getsmscode" id="auto-id-1562925174293">获取验证码</a>
+                                    <a href="javascript:void(0);" onclick="sendCode(this)" style="font-size: 12px" class="tabfocus getsmscode" id="auto-id-1562925174293">获取验证码</a>
+                                    <script src="layui/layui.all.js"></script>
+                                    <script type="text/javascript">
+                                        //定义变量
+                                        var clock = '';
+                                        var nums = 60;
+                                        var btn;
+                                        var code = "";
+                                        function sendCode(thisBtn) {
+                                            var userphone = document.getElementById('phoneipt');
+                                            var phonrErr = document.getElementById('nerror1');
+                                            var pattern = /^1[34578]\d{9}$/; //验证手机号正则表达式
+                                            if(!pattern.test(userphone.value)) {
+                                                var error = '手机号格式错误';
+                                                if (userphone.value == '') {
+                                                    error = "手机号不能为空";
+                                                }
+                                                $(userphone).parent().parent().css("border-color", "#FA6060");
+                                                phonrErr.innerHTML = "<div class=\"ferrortail\" id=\"auto-id-1562987424948\"></div>" +
+                                                    "<div class=\"ferrorhead\" id=\"auto-id-1562987424947\">" + error + "</div>";
+                                                phonrErr.style.marginTop = "10px";
+                                                phonrErr.className("m-nerror");
+                                                return;
+                                            }
+                                            var flag = false;
+                                            //调用服务端发送短信服务,给用户发送短信验证码
+                                            $.ajax({
+                                                //发送短信的请求方式
+                                                type: "post",
+                                                //路径
+                                                url: "phoneexit",
+                                                //同步请求
+                                                async:false,
+                                                //传到后台的参数
+                                                data: {"phone":userphone.value},
+                                                datatype:"text",
+                                                //返回结果
+                                                success:function(data){
+                                                    if(data == 0){
+                                                        layer.msg('该手机号尚未注册<br>需进行注册', {
+                                                            time: 3000, //3s后自动关闭
+                                                            btn: ['立即注册', '取消'],
+                                                            yes: function(index){
+                                                                parent.layer.closeAll(); //关闭所有的弹窗
+                                                                location.href("register.html");
+                                                            },
+                                                        });
+                                                    }else{
+                                                        code = data;
+                                                        flag = true;
+                                                    }
+                                                }
+                                            });
+                                            if(flag){
+                                                btn = thisBtn;
+                                                btn.disabled = true; //将按钮置为不可点击
+                                                btn.innerHTML = nums + '秒后重新获取';
+                                                clock = setInterval(doLoop, 1000); //一秒执行一次,这是一个定时器
+                                            }
+
+                                        }
+                                        function doLoop() {
+                                            nums--;
+                                            if (nums > 0) {
+                                                $('#auto-id-1562925174293').removeAttr('href');//去掉a标签中的href属性
+                                                $('#auto-id-1562925174293').removeAttr('onclick');//去掉a标签中的onclick事件
+                                                btn.innerHTML = nums + '秒后重新获取';
+                                            } else {
+                                                $('#auto-id-1562925174293').attr("href","javascript:void(0);");
+                                                $('#auto-id-1562925174293').attr("onclick","sendCode(this);");
+                                                clearInterval(clock); //清除js定时器
+                                                btn.disabled = false;
+                                                btn.innerHTML = '获取验证码';
+                                                nums = 60; //重置时间
+                                            }
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -563,14 +629,14 @@
 
                         </div>
                         <div class="f-cb loginbox">
-                            <a id="submitBtn" tabindex="8" class="u-loginbtn btncolor tabfocus"onclick="sub()">登 录</a>
+                            <a id="submitBtn" tabindex="8"
+                               class="u-loginbtn btncolor tabfocus" onclick="sub()">登 录</a>
                         </div>
                     </div>
                     <div class="m-unlogin" id="auto-id-1562925174298">
                         <!--&lt;!&ndash;Regular if5&ndash;&gt;-->
-                        <div class="b-unlogn" id="auto-id-1562925174301">
-                                <span onclick="selcheck()"
-                                      class="u-checkbox tabfocus u-checkbox-select"
+                        <div class="b-unlogn" id="auto-id-1562925174301"><!--  onclick="selcheck()" -->
+                                <span class="u-checkbox tabfocus u-checkbox-select"
                                       id="auto-id-1562933411059">
                                 </span>
                             <label for="un-login" id="auto-id-1562933411058">10天免登录</label>
@@ -695,10 +761,10 @@
                         <a data-v-98173a38="" href="javascript:;" class="w-icon w-icon-29 w-icon-29-3"></a>
                         <span data-v-98173a38="" class="iconmask w-icon w-icon-29-4"></span></li>
                 </ul>
-                <a data-v-98173a38="" href="javascript:;" class="gotoreg j-tag">
-                    手机号快捷注册
-                    <!--<span data-v-98173a38="" class="arrow w-icon w-icon-30"></span>-->
-                </a>
+                <!--<a data-v-98173a38="" href="register.html" class="gotoreg j-tag">
+                    注册网易通行证
+                    &lt;!&ndash;<span data-v-98173a38="" class="arrow w-icon w-icon-30"></span>&ndash;&gt;
+                </a>-->
             </section>
         </section>
 

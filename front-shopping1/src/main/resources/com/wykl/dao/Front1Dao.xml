@@ -5,11 +5,25 @@
 <mapper namespace="com.wykl.dao.Front1Dao">
 
     <select id="loginkl" resultType="Users">
-		SELECT 	`userid`, `username`, `loginname`, `password`, `documenttype`, `idnumber`, `mobilephoneno`, `email`,
-		`gender`, `zipcode`, `province`, `thecity`, `address`, `integeral`, `registrationtime`, `birthday`,
-		`userstate`, `membershipgrade`, `money`, `ismerchants`, `isadmin`, `encrypted`, `encryptedanswer`
+		SELECT *
 		FROM `course`.`users`
-		WHERE `mobilephoneno` = #{mobilephoneno}  AND `password`= #{password}
+		WHERE `mobilephoneno` = #{mobilephoneno}
 	</select>
-
+	<select id="findByUserName" resultType="int">
+		SELECT COUNT(*) FROM users WHERE username = #{username}
+	</select>
+	<insert id="insertUser">
+		INSERT INTO `course`.`users` (`username`, `uname`, `password`, `idnumber`, `mobilephoneno`, `gender`, `birthday`)
+		VALUES (#{username},#{uname},#{password},#{idnumber},#{mobilephoneno},#{gender},#{birthday})
+	</insert>
+	<select id="selectByPhone" resultType="int">
+		SELECT COUNT(*) FROM users WHERE mobilephoneno = #{mobilephoneno}
+	</select>
+	<select id="judgeCoupon" resultType="int">
+		SELECT COUNT(*) FROM couponpull WHERE uid = #{uid} AND cpid = #{cpid}
+	</select>
+	<insert id="addCouponpull">
+		INSERT INTO `course`.`couponpull` ( `uid`, `cpid`)VALUES	(#{uid},#{cpid});
+	</insert>
+	
 </mapper>

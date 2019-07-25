@@ -23,6 +23,7 @@ spring:
       #开发时关闭缓存，不然无法看到实时页面(需重启)
       cache: false
       #prefix: / #classpath:/templates/ #(默认)
+      #prefix: classpath:/templates/
       #suffix: .html #(默认)
 
   application:
